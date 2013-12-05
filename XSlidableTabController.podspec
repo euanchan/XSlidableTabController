@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/EuanChan/XSlidableTabController'
   s.authors  = { 'Euan Chan' => 'euan1022@gmail.com' }
   s.source   = { :git => 'https://github.com/EuanChan/XSlidableTabController.git', :tag => s.version.to_s }
-  s.source_files = 'XSlidableTabController/classes/*.{h,m}'
+  s.source_files = 'classes/*.{h,m}'
   s.requires_arc = true
 
   s.platform = :ios, '5.0'

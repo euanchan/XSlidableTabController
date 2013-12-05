@@ -12,12 +12,12 @@
 @interface XSlidableTab : UIView
 
 @property (assign, nonatomic) id<XSlidableTabDelegate> delegate;
-@property (assign, nonatomic) NSInteger  btnWidth;
 @property (assign, nonatomic) NSInteger  btnHeight;
 @property (assign, nonatomic) NSInteger  btnGap;
 @property (assign, nonatomic) NSInteger  btnFontSize;
 @property (strong, nonatomic) UIColor   *titleColorNormal;
 @property (strong, nonatomic) UIColor   *titleColorSelected;
+@property (strong, nonatomic) UIImage   *selectedImage;
 
 - (id)initWithFrame:(CGRect)frame;
 - (void)updateWithTitles:(NSArray *)titles;

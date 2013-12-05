@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class XSlidableTab;
 @protocol XSlidableTabControllerDelegate;
 @interface XSlidableTabController : UIViewController
 
-@property (strong, nonatomic) NSArray      *viewCtrllerArr;
 @property (assign, nonatomic) id<XSlidableTabControllerDelegate> delegate;
 
-- (id)initWithViewControllers:(NSArray *)viewControllerArr;
+@property (strong, nonatomic) XSlidableTab *tabView;
+@property (strong, nonatomic) UIScrollView *scrollView;
+
+@property (assign, nonatomic) NSInteger tabHeight;
+
+- (NSArray *)viewControllers;
 - (void)setViewControllers:(NSArray *)viewControllerArr;
 
 @end

@@ -39,71 +39,68 @@ static const NSInteger kBtnFontSizeDefault = 15;
 
 - (void)setupDefault
 {
-    _btnWidth = kBtnWidthDefault;
     _btnHeight = kBtnHeightDefault;
     _btnGap = kBtnGapDefault;
     _btnFontSize = kBtnFontSizeDefault;
     _scrollViewMarginLeft = _btnGap;
     _scrollViewMarginRight = _btnGap;
     
-    self.titleColorNormal = kUITabMenuTextColor;
-    self.titleColorSelected = kUITabMenuTextColorSelect;
-    
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tab_menu_bg"]];
+    _titleColorNormal = [UIColor blackColor];
+    _titleColorSelected = [UIColor orangeColor];
 }
 
 static const NSInteger kTitleBtnBaseTag = 2047;
 - (void)updateWithTitles:(NSArray *)titles
 {
-    self.titles = [NSMutableArray arrayWithArray:titles];
-    self.titleBtnFrameArr = [[NSMutableArray alloc] initWithCapacity:[self.titles count]];
+    _titles = [NSMutableArray arrayWithArray:titles];
+    self.titleBtnFrameArr = [[NSMutableArray alloc] initWithCapacity:[_titles count]];
     
-    [self.scrollView removeFromSuperview];
+    [_scrollView removeFromSuperview];
     CGRect rtContent = CGRectMake(_scrollViewMarginLeft, 0, self.bounds.size.width - _scrollViewMarginLeft - _scrollViewMarginRight, self.bounds.size.height);
-    self.scrollView = [[UIScrollView alloc] initWithFrame:rtContent];
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    [self addSubview:self.scrollView];
+    _scrollView = [[UIScrollView alloc] initWithFrame:rtContent];
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.backgroundColor = [UIColor clearColor];
+    [self addSubview:_scrollView];
     
     CGFloat posX = _btnGap;
-    for (NSInteger i = 0; i < [self.titles count]; ++i) {
-        NSString *title = self.titles[i];
+    for (NSInteger i = 0; i < [_titles count]; ++i) {
+        NSString *title = _titles[i];
         CGSize titleSize = [title sizeWithFont:[UIFont systemFontOfSize:_btnFontSize] constrainedToSize:CGSizeMake(CGFLOAT_MAX, _btnHeight)];
         
         CGRect rtTitleBtn = CGRectMake(posX, 0, titleSize.width + _btnGap * 2, _btnHeight);
         UIButton *titleBtn = [[UIButton alloc] initWithFrame:rtTitleBtn];
         [titleBtn setTag:kTitleBtnBaseTag + i];
         [titleBtn setTitle:title forState:UIControlStateNormal];
-        [titleBtn setTitleColor:self.titleColorNormal forState:UIControlStateNormal];
-        [titleBtn setTitleColor:self.titleColorSelected forState:UIControlStateHighlighted];
-        [titleBtn setTitleColor:self.titleColorSelected forState:UIControlStateSelected];
+        [titleBtn setTitleColor:_titleColorNormal forState:UIControlStateNormal];
+        [titleBtn setTitleColor:_titleColorSelected forState:UIControlStateHighlighted];
+        [titleBtn setTitleColor:_titleColorSelected forState:UIControlStateSelected];
         [titleBtn.titleLabel setFont:[UIFont systemFontOfSize:_btnFontSize]];
         [titleBtn addTarget:self action:@selector(titleBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
-        [self.scrollView addSubview:titleBtn];
+        [_scrollView addSubview:titleBtn];
         
         self.titleBtnFrameArr[i] = @[@(rtTitleBtn.origin.x), @(rtTitleBtn.origin.y), @(rtTitleBtn.size.width), @(rtTitleBtn.size.height)];
         posX = rtTitleBtn.origin.x + rtTitleBtn.size.width;
     }
     
     // extend button width if titles cannt fill the scrollview.
-    if (posX < self.scrollView.bounds.size.width - _btnGap) {
-        CGFloat diff = self.scrollView.bounds.size.width - posX - _btnGap;
-        CGFloat diffEach = diff / (CGFloat)[self.titles count];
-        for (NSInteger i = 0; i < [self.titles count]; ++i) {
-            UIView *titleBtn = [self.scrollView viewWithTag:kTitleBtnBaseTag + i];
-            [titleBtn setLeft:titleBtn.frame.origin.x + diffEach * (CGFloat)i];
-            [titleBtn setWidth:titleBtn.frame.size.width + diffEach];
-            self.titleBtnFrameArr[i] = @[@(titleBtn.origin.x), @(titleBtn.origin.y), @(titleBtn.frame.size.width), @(titleBtn.size.height)];
+    if (posX < _scrollView.bounds.size.width - _btnGap) {
+        CGFloat diff = _scrollView.bounds.size.width - posX - _btnGap;
+        CGFloat diffEach = diff / (CGFloat)[_titles count];
+        for (NSInteger i = 0; i < [_titles count]; ++i) {
+            UIView *titleBtn = [_scrollView viewWithTag:kTitleBtnBaseTag + i];
+            CGRect rtTitleBtn = CGRectMake(titleBtn.frame.origin.x + diffEach * (CGFloat)i, titleBtn.frame.origin.y, titleBtn.frame.size.width + diffEach, titleBtn.frame.size.height);
+            [titleBtn setFrame:rtTitleBtn];
+            self.titleBtnFrameArr[i] = @[@(titleBtn.frame.origin.x), @(titleBtn.frame.origin.y), @(titleBtn.frame.size.width), @(titleBtn.frame.size.height)];
         }
     }
     
-    self.scrollView.contentSize = CGSizeMake(posX, _btnHeight);
+    _scrollView.contentSize = CGSizeMake(posX, _btnHeight);
     
     // setup the selected background view.
-    UIImage *selectedImg = [UIImage imageNamed:@"tab_menu_btn_selected"];
     CGRect rtSelectImg = [self btnAtIndex:_selectIndex].frame;
     self.selectedBgView = [[UIImageView alloc] initWithFrame:rtSelectImg];
-    [self.selectedBgView setImage:[selectedImg resizableImageWithCapInsets:UIEdgeInsetsMake(10, 12, 10, 12)]];
-    [self.scrollView insertSubview:self.selectedBgView atIndex:0];
+    [self.selectedBgView setImage:_selectedImage];
+    [_scrollView insertSubview:self.selectedBgView atIndex:0];
     
     [self updateSelectedTitle:[self btnAtIndex:_selectIndex]];
 }
@@ -121,7 +118,7 @@ static const NSInteger kTitleBtnBaseTag = 2047;
 - (void)updateTabMenuWithPageOffsetRate:(CGFloat)offsetPagingRate
 {
     // when scroll out of first/last page, let the highlight position where it's.
-    NSInteger lastPage = [self.titles count] - 1;
+    NSInteger lastPage = [_titles count] - 1;
     if (offsetPagingRate < 0 || (int)offsetPagingRate > lastPage)
         return;
     
@@ -188,11 +185,11 @@ static const NSInteger kTitleBtnBaseTag = 2047;
 
 - (BOOL)checkThenMoveBtnEntireVisibleHideInLeftSideIfNeed:(UIButton *)button
 {
-    CGRect rtBtn = [self.scrollView convertRect:button.frame toView:self];
+    CGRect rtBtn = [_scrollView convertRect:button.frame toView:self];
     if (rtBtn.origin.x < -_scrollViewMarginLeft) {
-        CGPoint offset = self.scrollView.contentOffset;
+        CGPoint offset = _scrollView.contentOffset;
         offset.x += rtBtn.origin.x - _scrollViewMarginLeft;
-        [self.scrollView setContentOffset:offset animated:YES];
+        [_scrollView setContentOffset:offset animated:YES];
         return YES;
     }
     return NO;
@@ -200,13 +197,13 @@ static const NSInteger kTitleBtnBaseTag = 2047;
 
 - (BOOL)checkThenMoveBtnEntireVisibleHideInRightSideIfNeed:(UIButton *)button
 {
-    CGRect rtBtn = [self.scrollView convertRect:button.frame toView:self];
-    if (rtBtn.origin.x + rtBtn.size.width > self.scrollView.frame.size.width + _scrollViewMarginRight) {
+    CGRect rtBtn = [_scrollView convertRect:button.frame toView:self];
+    if (rtBtn.origin.x + rtBtn.size.width > _scrollView.frame.size.width + _scrollViewMarginRight) {
         // make next btn entire visible.
-        CGFloat outWidth = self.scrollView.frame.size.width - rtBtn.origin.x - rtBtn.size.width + _scrollViewMarginRight;
-        CGPoint offset = self.scrollView.contentOffset;
+        CGFloat outWidth = _scrollView.frame.size.width - rtBtn.origin.x - rtBtn.size.width + _scrollViewMarginRight;
+        CGPoint offset = _scrollView.contentOffset;
         offset.x -= outWidth;
-        [self.scrollView setContentOffset:offset animated:YES];
+        [_scrollView setContentOffset:offset animated:YES];
         return YES;
     }
     return NO;

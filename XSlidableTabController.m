@@ -11,28 +11,29 @@
 
 @interface XSlidableTabController () <UIScrollViewDelegate, XSlidableTabDelegate>
 
-@property (strong, nonatomic) XSlidableTab     *tabMenuView;
-@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) NSArray      *viewCtrllerArr;
 
 @end
 
 @implementation XSlidableTabController
 
-- (id)initWithViewControllers:(NSArray *)viewControllerArr
+- (id)init
 {
     if (self = [super init]) {
-        self.viewCtrllerArr = viewControllerArr;
+        
     }
     return self;
 }
 
-static const CGFloat kMenuHeight = 29;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    if (self.viewCtrllerArr)
-        [self setup];
+    _tabHeight = 29;
+    
+    [self setup];
+    if (_viewCtrllerArr)
+        [self updateViews];
 }
 
 - (void)viewWillLayoutSubviews
@@ -40,74 +41,85 @@ static const CGFloat kMenuHeight = 29;
     [super viewWillLayoutSubviews];
     
     CGFloat baseY = 0.f, width = self.view.frame.size.width;
-    CGRect rtTabMenu = CGRectMake(0, baseY, width, kMenuHeight);
-    [self.tabMenuView setFrame:rtTabMenu];
+    CGRect rtTabMenu = CGRectMake(0, baseY, width, _tabHeight);
+    [_tabView setFrame:rtTabMenu];
     baseY += rtTabMenu.size.height;
     CGRect rtContent = CGRectMake(0, baseY, width, self.view.frame.size.height - baseY);
-    [self.scrollView setFrame:rtContent];
-    CGSize szScrollContent = self.scrollView.contentSize;
+    [_scrollView setFrame:rtContent];
+    CGSize szScrollContent = _scrollView.contentSize;
     szScrollContent.height = rtContent.size.height;
-    [self.scrollView setContentSize:szScrollContent];
+    [_scrollView setContentSize:szScrollContent];
+}
+
+- (NSArray *)viewControllers
+{
+    return _viewCtrllerArr;
 }
 
 - (void)setViewControllers:(NSArray *)viewControllerArr
 {
-    self.viewCtrllerArr = viewControllerArr;
-    [self setup];
+    _viewCtrllerArr = viewControllerArr;
+    [self updateViews];
 }
 
 - (void)setup
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    NSMutableArray *titleArray = [[NSMutableArray alloc] initWithCapacity:self.viewCtrllerArr.count];
-    for (int i = 0; i < self.viewCtrllerArr.count; ++i) {
-        titleArray[i] = [self.viewCtrllerArr[i] title];
-    }
-    
     // header tab menu bar.
     CGFloat baseY = 0.f, width = self.view.frame.size.width;
-    CGRect rtTabMenu = CGRectMake(0, baseY, width, kMenuHeight);
-    self.tabMenuView = [[XSlidableTab alloc] initWithFrame:rtTabMenu];
-    [self.tabMenuView updateWithTitles:titleArray];
-    self.tabMenuView.delegate = self;
-    [self.view addSubview:self.tabMenuView];
+    CGRect rtTabMenu = CGRectMake(0, baseY, width, _tabHeight);
+    _tabView = [[XSlidableTab alloc] initWithFrame:rtTabMenu];
+    _tabView.delegate = self;
+    [self.view addSubview:_tabView];
     
     baseY += rtTabMenu.size.height;
     
     // content place view.
     CGRect rtContent = CGRectMake(0, baseY, width, self.view.frame.size.height - baseY);
-    self.scrollView = [[UIScrollView alloc] initWithFrame:rtContent];
-    self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.directionalLockEnabled = YES;
-    self.scrollView.delegate = self;
-    self.scrollView.alwaysBounceVertical = NO;
-    self.scrollView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.scrollView];
+    _scrollView = [[UIScrollView alloc] initWithFrame:rtContent];
+    _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.pagingEnabled = YES;
+    _scrollView.directionalLockEnabled = YES;
+    _scrollView.delegate = self;
+    _scrollView.alwaysBounceVertical = NO;
+    _scrollView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:_scrollView];
+}
+
+- (void)updateViews
+{
+    NSMutableArray *titleArray = [[NSMutableArray alloc] initWithCapacity:_viewCtrllerArr.count];
+    for (int i = 0; i < _viewCtrllerArr.count; ++i) {
+        titleArray[i] = [_viewCtrllerArr[i] title];
+    }
+    [_tabView updateWithTitles:titleArray];
     
     [self loadPages];
 }
 
 - (void)loadPages
 {
-    int numOfPages = [self.viewCtrllerArr count];
+    for (UIView *subView in _scrollView.subviews)
+        [subView removeFromSuperview];
+        
+    int numOfPages = [_viewCtrllerArr count];
     CGFloat nextXPos = 0.f;
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    CGFloat pageHeight = self.scrollView.frame.size.height;
+    CGFloat pageWidth = _scrollView.frame.size.width;
+    CGFloat pageHeight = _scrollView.frame.size.height;
     for (int i = 0; i < numOfPages; ++i) {
-        UIViewController *viewCtrl = self.viewCtrllerArr[i];
+        UIViewController *viewCtrl = _viewCtrllerArr[i];
         UIView *contentView = viewCtrl.view;
         contentView.frame = CGRectMake(nextXPos, 0, pageWidth, pageHeight);
         nextXPos += pageWidth;
         
-        [self.scrollView addSubview:contentView];
+        [_scrollView addSubview:contentView];
         [self addChildViewController:viewCtrl];
         [viewCtrl didMoveToParentViewController:self];
     }
     
-    self.scrollView.contentSize = CGSizeMake(nextXPos, pageHeight);
+    _scrollView.contentSize = CGSizeMake(nextXPos, pageHeight);
     
     if (_delegate && [_delegate respondsToSelector:@selector(didSwitchToTabAtIndex:)])
         [_delegate didSwitchToTabAtIndex:0];
@@ -122,15 +134,15 @@ static const CGFloat kMenuHeight = 29;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.isDragging) {
-        CGFloat pageRate = self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
-        [self.tabMenuView updateTabMenuWithPageOffsetRate:pageRate];
+        CGFloat pageRate = _scrollView.contentOffset.x / _scrollView.frame.size.width;
+        [_tabView updateTabMenuWithPageOffsetRate:pageRate];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    CGFloat page = self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
-    [self.tabMenuView updateTabMenuSelectedIndex:page];
+    CGFloat page = _scrollView.contentOffset.x / _scrollView.frame.size.width;
+    [_tabView updateTabMenuSelectedIndex:page];
     
     if (_delegate && [_delegate respondsToSelector:@selector(didSwitchToTabAtIndex:)])
         [_delegate didSwitchToTabAtIndex:page];
@@ -139,10 +151,10 @@ static const CGFloat kMenuHeight = 29;
 #pragma mark - XSlidableTabDelegate
 - (void)segmentedController:(XSlidableTab *)segmentCtrller tappedAtIndex:(NSInteger)index
 {
-    CGFloat offset = self.scrollView.contentOffset.x;
+    CGFloat offset = _scrollView.contentOffset.x;
     int page = offset / self.view.frame.size.width;
-    if (index != page && page < [self.scrollView.subviews count]){
-        [self.scrollView setContentOffset:CGPointMake([self getPosXOfPage:index], 0) animated:YES];
+    if (index != page && page < [_scrollView.subviews count]){
+        [_scrollView setContentOffset:CGPointMake([self getPosXOfPage:index], 0) animated:YES];
     }
     
     if (_delegate && [_delegate respondsToSelector:@selector(didSwitchToTabAtIndex:)])
@@ -151,7 +163,7 @@ static const CGFloat kMenuHeight = 29;
 
 - (CGFloat)getPosXOfPage:(NSInteger)page
 {
-    return page * self.scrollView.frame.size.width;
+    return page * _scrollView.frame.size.width;
 }
          
 @end

@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'slidable tab view controller, may use to create news column. '
   s.homepage = 'https://github.com/EuanChan/XSlidableTabController'
   s.authors  = { 'Euan Chan' => 'euan1022@gmail.com' }
-  s.source   = { :git => 'https://github.com/EuanChan/XSlidableTabController.git', :tag => s.version.to_s }
+  s.source   = { :git => 'https://github.com/EuanChan/XSlidableTabController.git'}
   s.source_files = '*.{h,m}'
   s.requires_arc = true
 

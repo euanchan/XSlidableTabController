@@ -1,4 +1,4 @@
-SlidableTabViewController
+XSlidableTabController
 =========================
 
 slidable tab view controller, may use to create news column. 

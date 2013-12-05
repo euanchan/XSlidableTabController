@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00002BCD185058D800E1A984 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00002BCC185058D800E1A984 /* Foundation.framework */; };
+		00002BCF185058D800E1A984 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00002BCE185058D800E1A984 /* CoreGraphics.framework */; };
+		00002BD1185058D800E1A984 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00002BD0185058D800E1A984 /* UIKit.framework */; };
+		00002BD7185058D800E1A984 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00002BD5185058D800E1A984 /* InfoPlist.strings */; };
+		00002BD9185058D800E1A984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00002BD8185058D800E1A984 /* main.m */; };
+		00002BDD185058D800E1A984 /* XAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00002BDC185058D800E1A984 /* XAppDelegate.m */; };
+		00002BE3185058D800E1A984 /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00002BE2185058D800E1A984 /* XViewController.m */; };
+		00002BE5185058D800E1A984 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00002BE4185058D800E1A984 /* Images.xcassets */; };
+		00002BEC185058D800E1A984 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00002BEB185058D800E1A984 /* XCTest.framework */; };
+		00002BED185058D800E1A984 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00002BCC185058D800E1A984 /* Foundation.framework */; };
+		00002BEE185058D800E1A984 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00002BD0185058D800E1A984 /* UIKit.framework */; };
+		00002BF6185058D800E1A984 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00002BF4185058D800E1A984 /* InfoPlist.strings */; };
+		00002C0C18505A3900E1A984 /* XSlidableTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 00002C0918505A3900E1A984 /* XSlidableTab.m */; };
+		00002C0D18505A3900E1A984 /* XSlidableTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00002C0B18505A3900E1A984 /* XSlidableTabController.m */; };
+		0061A17C185062DD0025102A /* tab_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0061A17A185062DD0025102A /* tab_bg@2x.png */; };
+		0061A17D185062DD0025102A /* tab_btn_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0061A17B185062DD0025102A /* tab_btn_selected@2x.png */; };
+		0061A17F185067260025102A /* XSlidableTabControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061A17E185067260025102A /* XSlidableTabControllerDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00002BEF185058D800E1A984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00002BC1185058D800E1A984 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00002BC8185058D800E1A984;
+			remoteInfo = XSlidableTabControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00002BC9185058D800E1A984 /* XSlidableTabControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XSlidableTabControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00002BCC185058D800E1A984 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00002BCE185058D800E1A984 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		00002BD0185058D800E1A984 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		00002BD4185058D800E1A984 /* XSlidableTabControllerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XSlidableTabControllerDemo-Info.plist"; sourceTree = "<group>"; };
+		00002BD6185058D800E1A984 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00002BD8185058D800E1A984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00002BDA185058D800E1A984 /* XSlidableTabControllerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSlidableTabControllerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		00002BDB185058D800E1A984 /* XAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAppDelegate.h; sourceTree = "<group>"; };
+		00002BDC185058D800E1A984 /* XAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAppDelegate.m; sourceTree = "<group>"; };
+		00002BE1185058D800E1A984 /* XViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XViewController.h; sourceTree = "<group>"; };
+		00002BE2185058D800E1A984 /* XViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XViewController.m; sourceTree = "<group>"; };
+		00002BE4185058D800E1A984 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		00002BEA185058D800E1A984 /* XSlidableTabControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XSlidableTabControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00002BEB185058D800E1A984 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		00002BF3185058D800E1A984 /* XSlidableTabControllerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XSlidableTabControllerDemoTests-Info.plist"; sourceTree = "<group>"; };
+		00002BF5185058D800E1A984 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00002C0818505A3900E1A984 /* XSlidableTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSlidableTab.h; path = ../XSlidableTab.h; sourceTree = "<group>"; };
+		00002C0918505A3900E1A984 /* XSlidableTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XSlidableTab.m; path = ../XSlidableTab.m; sourceTree = "<group>"; };
+		00002C0A18505A3900E1A984 /* XSlidableTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSlidableTabController.h; path = ../XSlidableTabController.h; sourceTree = "<group>"; };
+		00002C0B18505A3900E1A984 /* XSlidableTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XSlidableTabController.m; path = ../XSlidableTabController.m; sourceTree = "<group>"; };
+		0061A17A185062DD0025102A /* tab_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bg@2x.png"; sourceTree = "<group>"; };
+		0061A17B185062DD0025102A /* tab_btn_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_btn_selected@2x.png"; sourceTree = "<group>"; };
+		0061A17E185067260025102A /* XSlidableTabControllerDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSlidableTabControllerDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00002BC6185058D800E1A984 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00002BCF185058D800E1A984 /* CoreGraphics.framework in Frameworks */,
+				00002BD1185058D800E1A984 /* UIKit.framework in Frameworks */,
+				00002BCD185058D800E1A984 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00002BE7185058D800E1A984 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00002BEC185058D800E1A984 /* XCTest.framework in Frameworks */,
+				00002BEE185058D800E1A984 /* UIKit.framework in Frameworks */,
+				00002BED185058D800E1A984 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00002BC0185058D800E1A984 = {
+			isa = PBXGroup;
+			children = (
+				00002C011850590D00E1A984 /* XSlidableTabController */,
+				00002BD2185058D800E1A984 /* XSlidableTabControllerDemo */,
+				00002BF1185058D800E1A984 /* XSlidableTabControllerDemoTests */,
+				00002BCB185058D800E1A984 /* Frameworks */,
+				00002BCA185058D800E1A984 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00002BCA185058D800E1A984 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00002BC9185058D800E1A984 /* XSlidableTabControllerDemo.app */,
+				00002BEA185058D800E1A984 /* XSlidableTabControllerDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00002BCB185058D800E1A984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00002BCC185058D800E1A984 /* Foundation.framework */,
+				00002BCE185058D800E1A984 /* CoreGraphics.framework */,
+				00002BD0185058D800E1A984 /* UIKit.framework */,
+				00002BEB185058D800E1A984 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00002BD2185058D800E1A984 /* XSlidableTabControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0061A17A185062DD0025102A /* tab_bg@2x.png */,
+				0061A17B185062DD0025102A /* tab_btn_selected@2x.png */,
+				00002BDB185058D800E1A984 /* XAppDelegate.h */,
+				00002BDC185058D800E1A984 /* XAppDelegate.m */,
+				00002BE1185058D800E1A984 /* XViewController.h */,
+				00002BE2185058D800E1A984 /* XViewController.m */,
+				00002BE4185058D800E1A984 /* Images.xcassets */,
+				00002BD3185058D800E1A984 /* Supporting Files */,
+			);
+			path = XSlidableTabControllerDemo;
+			sourceTree = "<group>";
+		};
+		00002BD3185058D800E1A984 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00002BD4185058D800E1A984 /* XSlidableTabControllerDemo-Info.plist */,
+				00002BD5185058D800E1A984 /* InfoPlist.strings */,
+				00002BD8185058D800E1A984 /* main.m */,
+				00002BDA185058D800E1A984 /* XSlidableTabControllerDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00002BF1185058D800E1A984 /* XSlidableTabControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				0061A17E185067260025102A /* XSlidableTabControllerDemoTests.m */,
+				00002BF2185058D800E1A984 /* Supporting Files */,
+			);
+			path = XSlidableTabControllerDemoTests;
+			sourceTree = "<group>";
+		};
+		00002BF2185058D800E1A984 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00002BF3185058D800E1A984 /* XSlidableTabControllerDemoTests-Info.plist */,
+				00002BF4185058D800E1A984 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00002C011850590D00E1A984 /* XSlidableTabController */ = {
+			isa = PBXGroup;
+			children = (
+				00002C0818505A3900E1A984 /* XSlidableTab.h */,
+				00002C0918505A3900E1A984 /* XSlidableTab.m */,
+				00002C0A18505A3900E1A984 /* XSlidableTabController.h */,
+				00002C0B18505A3900E1A984 /* XSlidableTabController.m */,
+			);
+			name = XSlidableTabController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00002BC8185058D800E1A984 /* XSlidableTabControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00002BFB185058D800E1A984 /* Build configuration list for PBXNativeTarget "XSlidableTabControllerDemo" */;
+			buildPhases = (
+				00002BC5185058D800E1A984 /* Sources */,
+				00002BC6185058D800E1A984 /* Frameworks */,
+				00002BC7185058D800E1A984 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XSlidableTabControllerDemo;
+			productName = XSlidableTabControllerDemo;
+			productReference = 00002BC9185058D800E1A984 /* XSlidableTabControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00002BE9185058D800E1A984 /* XSlidableTabControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00002BFE185058D800E1A984 /* Build configuration list for PBXNativeTarget "XSlidableTabControllerDemoTests" */;
+			buildPhases = (
+				00002BE6185058D800E1A984 /* Sources */,
+				00002BE7185058D800E1A984 /* Frameworks */,
+				00002BE8185058D800E1A984 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00002BF0185058D800E1A984 /* PBXTargetDependency */,
+			);
+			name = XSlidableTabControllerDemoTests;
+			productName = XSlidableTabControllerDemoTests;
+			productReference = 00002BEA185058D800E1A984 /* XSlidableTabControllerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00002BC1185058D800E1A984 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = X;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Euan Chan";
+				TargetAttributes = {
+					00002BE9185058D800E1A984 = {
+						TestTargetID = 00002BC8185058D800E1A984;
+					};
+				};
+			};
+			buildConfigurationList = 00002BC4185058D800E1A984 /* Build configuration list for PBXProject "XSlidableTabControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00002BC0185058D800E1A984;
+			productRefGroup = 00002BCA185058D800E1A984 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00002BC8185058D800E1A984 /* XSlidableTabControllerDemo */,
+				00002BE9185058D800E1A984 /* XSlidableTabControllerDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00002BC7185058D800E1A984 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00002BE5185058D800E1A984 /* Images.xcassets in Resources */,
+				0061A17C185062DD0025102A /* tab_bg@2x.png in Resources */,
+				0061A17D185062DD0025102A /* tab_btn_selected@2x.png in Resources */,
+				00002BD7185058D800E1A984 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00002BE8185058D800E1A984 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00002BF6185058D800E1A984 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00002BC5185058D800E1A984 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00002C0C18505A3900E1A984 /* XSlidableTab.m in Sources */,
+				00002BD9185058D800E1A984 /* main.m in Sources */,
+				00002BDD185058D800E1A984 /* XAppDelegate.m in Sources */,
+				00002BE3185058D800E1A984 /* XViewController.m in Sources */,
+				00002C0D18505A3900E1A984 /* XSlidableTabController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00002BE6185058D800E1A984 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0061A17F185067260025102A /* XSlidableTabControllerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00002BF0185058D800E1A984 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00002BC8185058D800E1A984 /* XSlidableTabControllerDemo */;
+			targetProxy = 00002BEF185058D800E1A984 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00002BD5185058D800E1A984 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00002BD6185058D800E1A984 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		00002BF4185058D800E1A984 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00002BF5185058D800E1A984 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00002BF9185058D800E1A984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00002BFA185058D800E1A984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00002BFC185058D800E1A984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XSlidableTabControllerDemo/XSlidableTabControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "XSlidableTabControllerDemo/XSlidableTabControllerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = XSlidableTabControllerDemo;
+				SDKROOT = iphoneos6.1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		00002BFD185058D800E1A984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XSlidableTabControllerDemo/XSlidableTabControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "XSlidableTabControllerDemo/XSlidableTabControllerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = XSlidableTabControllerDemo;
+				SDKROOT = iphoneos6.1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		00002BFF185058D800E1A984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XSlidableTabControllerDemo.app/XSlidableTabControllerDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XSlidableTabControllerDemo/XSlidableTabControllerDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "XSlidableTabControllerDemoTests/XSlidableTabControllerDemoTests-Info.plist";
+				PRODUCT_NAME = XSlidableTabControllerDemoTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		00002C00185058D800E1A984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XSlidableTabControllerDemo.app/XSlidableTabControllerDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XSlidableTabControllerDemo/XSlidableTabControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "XSlidableTabControllerDemoTests/XSlidableTabControllerDemoTests-Info.plist";
+				PRODUCT_NAME = XSlidableTabControllerDemoTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00002BC4185058D800E1A984 /* Build configuration list for PBXProject "XSlidableTabControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00002BF9185058D800E1A984 /* Debug */,
+				00002BFA185058D800E1A984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00002BFB185058D800E1A984 /* Build configuration list for PBXNativeTarget "XSlidableTabControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00002BFC185058D800E1A984 /* Debug */,
+				00002BFD185058D800E1A984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00002BFE185058D800E1A984 /* Build configuration list for PBXNativeTarget "XSlidableTabControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00002BFF185058D800E1A984 /* Debug */,
+				00002C00185058D800E1A984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00002BC1185058D800E1A984 /* Project object */;
+}

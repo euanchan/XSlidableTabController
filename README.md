@@ -3,6 +3,8 @@ XSlidableTabController
 
 slidable tab view controller, may use to create news column. 
 
+![Demo](https://raw.github.com/EuanChan/XSlidableTabController/master/Screenshot/screenshot1.gif)
+
 ###Guide
 make a new class inherited from XSliableTabControll, initialize columns in viewDidLoad
 

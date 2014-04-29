@@ -1,3 +1,3 @@
 language: objective-c
 xcode_project: ./XSlidableTabControllerDemo/XSlidableTabControllerDemo.xcodeproj
-xcode_scheme: XSlidableTabControllerDemoTests
+xcode_scheme: XSlidableTabControllerDemoSample

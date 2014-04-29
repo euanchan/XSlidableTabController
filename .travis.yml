@@ -1,10 +1,3 @@
 language: objective-c
-xcode_workspace: ./XSlidableTabControllerDemo/XSlidableTabControllerDemo.xcworkspace
+xcode_project: ./XSlidableTabControllerDemo/XSlidableTabControllerDemo.xcodeproj
 xcode_scheme: XSlidableTabControllerDemo
-xcode_sdk: iphonesimulator7.0
-before_script:
-  - brew update
-  - brew upgrade xctool
-before_install:
-  - export LANG=en_US.UTF-8
-  - gem install cocoapods -v '0.32.1'

@@ -23,6 +23,15 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "00002BC8185058D800E1A984"
+            BuildableName = "XSlidableTabControllerDemo.app"
+            BlueprintName = "XSlidableTabControllerDemo"
+            ReferencedContainer = "container:XSlidableTabControllerDemo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -33,6 +42,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "00002BC8185058D800E1A984"
+            BuildableName = "XSlidableTabControllerDemo.app"
+            BlueprintName = "XSlidableTabControllerDemo"
+            ReferencedContainer = "container:XSlidableTabControllerDemo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

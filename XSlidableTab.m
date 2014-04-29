@@ -8,7 +8,6 @@
 
 #import "XSlidableTab.h"
 
-static const NSInteger kBtnWidthDefault = 60;
 static const NSInteger kBtnHeightDefault = 29;
 static const NSInteger kBtnGapDefault = 10;
 static const NSInteger kBtnFontSizeDefault = 15;

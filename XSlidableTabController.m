@@ -104,11 +104,11 @@
     for (UIView *subView in _scrollView.subviews)
         [subView removeFromSuperview];
         
-    int numOfPages = [_viewCtrllerArr count];
+    NSUInteger numOfPages = [_viewCtrllerArr count];
     CGFloat nextXPos = 0.f;
     CGFloat pageWidth = _scrollView.frame.size.width;
     CGFloat pageHeight = _scrollView.frame.size.height;
-    for (int i = 0; i < numOfPages; ++i) {
+    for (NSUInteger i = 0; i < numOfPages; ++i) {
         UIViewController *viewCtrl = _viewCtrllerArr[i];
         UIView *contentView = viewCtrl.view;
         contentView.frame = CGRectMake(nextXPos, 0, pageWidth, pageHeight);

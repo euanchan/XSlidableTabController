@@ -55,7 +55,7 @@ static const NSInteger kTitleBtnBaseTag = 2047;
     self.titleBtnFrameArr = [[NSMutableArray alloc] initWithCapacity:[_titles count]];
     
     [_scrollView removeFromSuperview];
-    CGRect rtContent = CGRectMake(_scrollViewMarginLeft, 0, self.bounds.size.width - _scrollViewMarginLeft - _scrollViewMarginRight, self.bounds.size.height);
+    CGRect rtContent = CGRectMake(_scrollViewMarginLeft, 0, self.bounds.size.width - _scrollViewMarginLeft - _scrollViewMarginRight, _btnHeight);
     _scrollView = [[UIScrollView alloc] initWithFrame:rtContent];
     _scrollView.scrollsToTop = NO;
     _scrollView.showsHorizontalScrollIndicator = NO;

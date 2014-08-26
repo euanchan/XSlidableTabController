@@ -12,6 +12,7 @@
 @interface XSlidableTabController () <UIScrollViewDelegate, XSlidableTabDelegate>
 
 @property (strong, nonatomic) NSArray      *viewCtrllerArr;
+@property (assign, nonatomic) NSInteger     tabHeight;
 
 @end
 
@@ -20,7 +21,15 @@
 - (id)init
 {
     if (self = [super init]) {
-        
+        _tabHeight = 36;
+    }
+    return self;
+}
+
+- (id)initWithTabHeight:(NSInteger)tabHeight
+{
+    if (self = [super init]) {
+        _tabHeight = tabHeight;
     }
     return self;
 }
@@ -28,8 +37,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _tabHeight = 29;
     
     [self setup];
     if (_viewCtrllerArr)
@@ -128,7 +135,6 @@
 #pragma mark - UIScrollView delegate
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-//    [self setStatusBarReplacedWithPageDots:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

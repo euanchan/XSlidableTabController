@@ -14,11 +14,12 @@
 
 @property (assign, nonatomic) id<XSlidableTabControllerDelegate> delegate;
 
-@property (strong, nonatomic) XSlidableTab *tabView;
-@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic, readonly) XSlidableTab *tabView;
+@property (strong, nonatomic, readonly) UIScrollView *scrollView;
 
-@property (assign, nonatomic) NSInteger tabHeight;
+@property (assign, nonatomic, readonly) NSInteger tabHeight;
 
+- (id)initWithTabHeight:(NSInteger)tabHeight;
 - (NSArray *)viewControllers;
 - (void)setViewControllers:(NSArray *)viewControllerArr;
 

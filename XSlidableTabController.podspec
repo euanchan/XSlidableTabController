@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'XSlidableTabController'
-  s.version  = '1.0.4'
+  s.version  = '1.0.5'
   s.license  = 'GPL v2'
   s.summary  = 'slidable tab view controller, may use to create news column. '
   s.homepage = 'https://github.com/EuanChan/XSlidableTabController'

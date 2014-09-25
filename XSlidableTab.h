@@ -12,6 +12,8 @@
 @interface XSlidableTab : UIView
 
 @property (assign, nonatomic) id<XSlidableTabDelegate> delegate;
+@property (assign, nonatomic) NSInteger  marginLeft;
+@property (assign, nonatomic) NSInteger  marginRight;
 @property (assign, nonatomic) NSInteger  btnHeight;
 @property (assign, nonatomic) NSInteger  btnGap;
 @property (assign, nonatomic) NSInteger  btnFontSize;

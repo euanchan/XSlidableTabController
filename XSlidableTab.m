@@ -8,6 +8,8 @@
 
 #import "XSlidableTab.h"
 
+static const NSInteger kMarginLeft = 10;
+static const NSInteger kMarginRight = 10;
 static const NSInteger kBtnHeightDefault = 29;
 static const NSInteger kBtnGapDefault = 10;
 static const NSInteger kBtnFontSizeDefault = 15;
@@ -38,6 +40,9 @@ static const NSInteger kBtnFontSizeDefault = 15;
 
 - (void)setupDefault
 {
+    _marginLeft = kMarginLeft;
+    _marginRight = kMarginRight;
+    
     _btnHeight = kBtnHeightDefault;
     _btnGap = kBtnGapDefault;
     _btnFontSize = kBtnFontSizeDefault;
@@ -62,7 +67,7 @@ static const NSInteger kTitleBtnBaseTag = 2047;
     _scrollView.backgroundColor = [UIColor clearColor];
     [self addSubview:_scrollView];
     
-    CGFloat posX = _btnGap;
+    CGFloat posX = _marginLeft;
     for (NSInteger i = 0; i < [_titles count]; ++i) {
         NSString *title = _titles[i];
         CGSize titleSize = [title sizeWithFont:[UIFont systemFontOfSize:_btnFontSize] constrainedToSize:CGSizeMake(CGFLOAT_MAX, _btnHeight)];
@@ -83,8 +88,8 @@ static const NSInteger kTitleBtnBaseTag = 2047;
     }
     
     // extend button width if titles cannt fill the scrollview.
-    if (posX < _scrollView.bounds.size.width - _btnGap) {
-        CGFloat diff = _scrollView.bounds.size.width - posX - _btnGap;
+    if (posX < _scrollView.bounds.size.width - _marginRight) {
+        CGFloat diff = _scrollView.bounds.size.width - posX - _marginRight;
         CGFloat diffEach = diff / (CGFloat)[_titles count];
         for (NSInteger i = 0; i < [_titles count]; ++i) {
             UIView *titleBtn = [_scrollView viewWithTag:kTitleBtnBaseTag + i];
